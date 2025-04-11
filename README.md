@@ -64,5 +64,5 @@ A fully functional Kanban app that:
 - Dynamically fetches and displays tasks.
 - Supports task editing, deletion, and persistent storage through local storage.
 - Has a responsive, mobile-friendly sidebar with a theme toggle switch.
-- s deployed to **Netlify** with a custom, readable URL.
+- App deployed to **Netlify** with a custom, readable URL.
 - Uses modular, well-documented code that is easy to maintain and scale.
