@@ -14,7 +14,10 @@ This project involves **deploying a Kanban app to Netlify**, ensuring the app's 
 
 ### Initial Data Fetching & Loading State
 
-- **Fetch tasks dynamically** from an API (**API LINK????????????????????????????????????????????????????????????????????????????**), replacing any hard-coded task data, to ensure the application receives the most up-to-date tasks.
+- **Fetch tasks dynamically** from an API: https://jsl-kanban-api.vercel.app/
+
+  \*\*Replace any hard-coded task data, to ensure the application receives the most up-to-date tasks.
+
 - **Display a loading message** while the tasks are being fetched so that users are informed the data is loading.
 - If fetching fails, **show an error message** to alert users to the issue.
 
