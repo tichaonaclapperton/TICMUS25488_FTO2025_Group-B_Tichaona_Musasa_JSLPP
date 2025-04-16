@@ -6,7 +6,7 @@ This project involves **deploying a Kanban app to Netlify**, ensuring the app's 
 
 ## Before You Begin
 
-Check the project user stories in your student dashboard before you start building.
+**Check the project user stories in your student dashboard** before you start building.
 
 ## Key Objectives
 
