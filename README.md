@@ -16,7 +16,7 @@ This project involves **deploying a Kanban app to Netlify**, ensuring the app's 
 
 ## Before You Begin
 
-**Check out the [Figma Reference File](www.figma.com/design/y7bFCUYL5ZHfPeojACBXg2/Challenge-1-%7C-JSL?node-id=0-1&t=yngAIXXKnJfH7Jj3-1) the project user stories in your student dashboard** before you start building.
+**Check out the [Figma Reference File](www.figma.com/design/y7bFCUYL5ZHfPeojACBXg2/Challenge-1-%7C-JSL?node-id=0-1&t=yngAIXXKnJfH7Jj3-1) and the project user stories in your student dashboard** before you start building.
 
 
 ## Key Objectives
