@@ -4,6 +4,16 @@
 
 This project involves **deploying a Kanban app to Netlify**, ensuring the app's functionality and persistence through local storage, and implementing dynamic features such as task editing, deletion, sidebar interaction, and a theme toggle. The goal is to deliver a fully functional, deployable application that is responsive across devices and maintains data consistency. Students will also focus on **clean, modular code** that is well-documented for future development.
 
+## WHAT to Submit
+- JSLPP GitHub Repo: Your JSLPP GitHub repository.
+- Recorded Presentation: A presentation of your project demonstrating and talking through how you solved the user stories. This will include explaining how you approached and solved the debugging challenges as well as talking through how you developed and solved the user stories you needed to write from scratch. No slides are neccessary and you will rather showcase your project code as you talk through your solutions. Make sure your recorded LOOM presentation link is in your GitHub README. 
+
+## HOW to Submit Your Project
+- Push Final Version to GitHub: Ensure your final work is on GitHub.
+- Project Naming Convention: Make sure the name of your GitHub Repository is correct with the right naming convention. The naming convention is given in the GitHub Repo title. StudentNo_Classcode_Group_Name-Surname_JSLPP
+- Include Presentation Assets: Include your recorded LOOM presentation link and link to your presentation slides in your GitHub README.
+- Provide LMS Link: Submit your Project GitHub link via the [Projects] tab > JSLPP PORTFOLIO PIECE > on the Learning Management System.
+
 ## Before You Begin
 
 **Check out the [Figma Reference File](www.figma.com/design/y7bFCUYL5ZHfPeojACBXg2/Challenge-1-%7C-JSL?node-id=0-1&t=yngAIXXKnJfH7Jj3-1) the project user stories in your student dashboard** before you start building.
