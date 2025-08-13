@@ -1,12 +1,22 @@
 /**
+
  * @fileoverview Task management application.
  * This script handles creating, editing, and rendering tasks
  * with support for saving to and retrieving from localStorage.
  */
 
-import { initialTasks } from "./initialData.js";
-let selectedTask = null;
-let tasks = getTasksFromLocalStorage();
+// import { initialTasks } from "./initialData.js";
+
+// let TasksApi = 'https://jsl-kanban-api.vercel.app/'
+
+import {loadApiTasks} from './apiData.js';
+// export let tasks =[];
+
+// Call this when your app starts
+loadApiTasks();
+export let tasks = [];
+  
+
 
 /**
  * @type {HTMLElement|null}
@@ -28,10 +38,14 @@ const taskStatusInput = document.getElementById("taskStatusInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
 /** @type {HTMLDivElement} */
 const saveTaskBtn = document.getElementById("saveTaskBtn");
+/** @type {HTMLDivElement} */
+const deleteTaskBtn = document.getElementById("deleteTaskBtn");
 
 addTaskBtn.addEventListener("click", () => {
 	openModal(null);
 });
+
+
 
 /**
  * Retrieves tasks from localStorage.
@@ -47,6 +61,8 @@ function getTasksFromLocalStorage() {
 		return [];
 	}
 }
+let selectedTask = null;
+
 
 /**
  * Renders all tasks into their respective status containers.
@@ -148,6 +164,8 @@ saveTaskBtn.addEventListener("click", () => {
 		if (index !== -1) {
 			// tasks[index] = { title, description, status };
 			tasks[index] = { ...tasks[index], title, description, status };
+            
+
 		}
 	} else {
 		// Add new task
@@ -155,9 +173,10 @@ saveTaskBtn.addEventListener("click", () => {
 	}
 	saveTasksToLocalStorage(tasks);
 	renderTasks(tasks);
+    saveTasks();
+
 	modal.style.display = "none";
 });
-
 /**
  * Opens the task modal for adding or editing a task.
  * @param {HTMLElement|null} taskElement - The clicked task element or null for new tasks.
@@ -174,7 +193,21 @@ function openModal(taskElement) {
 		taskStatusInput.value = taskElement.dataset.status;
 
 		heading.textContent = "Edit Task";
-		saveTaskBtn.textContent = "Update Task";
+		saveTaskBtn.textContent = "Save Changes";
+		deleteTaskBtn.textContent = "Delete Task";
+		deleteTaskBtn.style.display = "inline-flex";
+
+		if (window.innerWidth <= 768) {
+			saveTaskBtn, (deleteTaskBtn.style.width = "100%");
+			deleteTaskBtn.style.marginLeft = "0";
+			deleteTaskBtn.style.marginTop = "15px";
+			deleteTaskBtn.style.paddingLeft = "90px";
+
+            saveTasks();
+		} else {
+			saveTaskBtn.style.width = "200px";
+			deleteTaskBtn.style.width = "200px";
+		}
 	} else {
 		taskInput.value = "";
 		taskDiscriptionInput.value = "";
@@ -182,8 +215,12 @@ function openModal(taskElement) {
 
 		heading.textContent = "Add New Task";
 		saveTaskBtn.textContent = "Create Task";
+		saveTaskBtn.style.width = "100%";
+		deleteTaskBtn.style.display = "none";
 	}
+    
 	modal.style.display = "flex";
+    
 }
 
 /**
@@ -192,8 +229,26 @@ function openModal(taskElement) {
  * @returns {void}
  */
 
-function saveTasksToLocalStorage(tasks) {
+ function saveTasksToLocalStorage(tasks) {
 	localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+export function saveTasks() {
+  saveTasksToLocalStorage(tasks);
+  renderTasks(tasks);
+}
+
+
+deleteTaskBtn.addEventListener("click", () => {
+	const taskId = selectedTask.dataset.taskId;
+	deletTaskFromLocalStorage(Number(taskId));
+	saveTasks();
+	modal.style.display = "none";
+});
+
+function deletTaskFromLocalStorage(id) {
+	tasks = tasks.filter((task) => task.id !== id);
+	saveTasks();
 }
 
 /**
@@ -224,4 +279,19 @@ document.addEventListener("DOMContentLoaded", () => {
 		saveTasksToLocalStorage(initialTasks); // Optional fallback
 	}
 	renderTasks(getTasksFromLocalStorage());
+});
+
+const toggle = document.getElementById("themeToggle");
+const body = document.body;
+const sidebar = document.getElementById("side-bar-div");
+const hideSidebarBtn = document.getElementById("hideSidebar");
+const layout = document.getElementById('layout')
+
+toggle.addEventListener("change", () => {
+  body.classList.toggle("dark-mode");
+});
+
+hideSidebarBtn.addEventListener("click", () => {
+  sidebar.classList.toggle("hidden");
+  layout.style.width='2000px'
 });
