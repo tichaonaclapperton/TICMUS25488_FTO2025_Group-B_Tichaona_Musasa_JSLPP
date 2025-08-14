@@ -37,7 +37,7 @@ body {
 	background-color: var(--primary-color);
 	border-right: 1px solid #e4ebfa; /* Light divider */
 	width: var(--sidebar-width);
-	height: 100vh;
+	height: 100%;
 }
 
 .logo-dark{
@@ -246,7 +246,7 @@ header {
 	font-weight: bold;
 }
 
-/* .hide-button{
+.hide-button{
     position: absolute;
     bottom: 0;
     margin-bottom: 16px;
@@ -254,8 +254,10 @@ header {
 
 .controls {
     margin-bottom: 50px;
+    position: relative;
 }
 .hide-button {
+    bottom: -60px;
     background: rgba(244, 247, 253, 1);
     border: none;
     padding: 0.5rem 1rem;
@@ -266,8 +268,9 @@ header {
     color:rgba(99, 95, 199, 1);
   }
   .hide-switch{
-    position: relative;
+    position: static;
     bottom: 0;
+    
     background-color:rgba(244, 247, 253, 1) ;
     height: 48px;
     width: 250px;
@@ -276,7 +279,7 @@ header {
     padding-top: 8px;
     margin-left: 20px;
     margin-bottom: 14px;
-  } */
+  }
 
 /* ===============
          Headings
@@ -447,6 +450,9 @@ h2 {
 
     .hide-button{
         display: none;
+    }
+    .controls{
+        margin-bottom: 0;
     }
         
     
