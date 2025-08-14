@@ -5,18 +5,13 @@
  * with support for saving to and retrieving from localStorage.
  */
 
-// import { initialTasks } from "./initialData.js";
-
-// let TasksApi = 'https://jsl-kanban-api.vercel.app/'
-
-import {loadApiTasks} from './apiData.js';
-// export let tasks =[];
+import { loadApiTasks } from "./apiData.js";
 
 // Call this when your app starts
 loadApiTasks();
 export let tasks = [];
-  
 
+tasks = getTasksFromLocalStorage();
 
 /**
  * @type {HTMLElement|null}
@@ -45,8 +40,6 @@ addTaskBtn.addEventListener("click", () => {
 	openModal(null);
 });
 
-
-
 /**
  * Retrieves tasks from localStorage.
  * @returns {Array<Object>} - The list of stored tasks or an empty array.
@@ -54,15 +47,15 @@ addTaskBtn.addEventListener("click", () => {
 
 function getTasksFromLocalStorage() {
 	try {
-		const saved = localStorage.getItem("tasks");
-		return saved ? JSON.parse(saved) : [];
-	} catch (e) {
-		console.error("Error reading localStorage", e);
+		const storedTasks = localStorage.getItem("tasks");
+		return storedTasks ? JSON.parse(storedTasks) : [];
+	} catch (error) {
+		console.error("Error reading localStorage:", error);
 		return [];
 	}
 }
-let selectedTask = null;
 
+let selectedTask = null;
 
 /**
  * Renders all tasks into their respective status containers.
@@ -164,16 +157,12 @@ saveTaskBtn.addEventListener("click", () => {
 		if (index !== -1) {
 			// tasks[index] = { title, description, status };
 			tasks[index] = { ...tasks[index], title, description, status };
-            
-
 		}
 	} else {
 		// Add new task
 		tasks.push({ id: Date.now(), title, description, status });
 	}
-	saveTasksToLocalStorage(tasks);
-	renderTasks(tasks);
-    saveTasks();
+	saveTasks();
 
 	modal.style.display = "none";
 });
@@ -203,7 +192,7 @@ function openModal(taskElement) {
 			deleteTaskBtn.style.marginTop = "15px";
 			deleteTaskBtn.style.paddingLeft = "90px";
 
-            saveTasks();
+			saveTasks();
 		} else {
 			saveTaskBtn.style.width = "200px";
 			deleteTaskBtn.style.width = "200px";
@@ -218,9 +207,8 @@ function openModal(taskElement) {
 		saveTaskBtn.style.width = "100%";
 		deleteTaskBtn.style.display = "none";
 	}
-    
+
 	modal.style.display = "flex";
-    
 }
 
 /**
@@ -229,20 +217,17 @@ function openModal(taskElement) {
  * @returns {void}
  */
 
- function saveTasksToLocalStorage(tasks) {
+function saveTasksToLocalStorage(tasks) {
 	localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
 export function saveTasks() {
-  saveTasksToLocalStorage(tasks);
-  renderTasks(tasks);
+	saveTasksToLocalStorage(tasks);
 }
-
 
 deleteTaskBtn.addEventListener("click", () => {
 	const taskId = selectedTask.dataset.taskId;
 	deletTaskFromLocalStorage(Number(taskId));
-	saveTasks();
 	modal.style.display = "none";
 });
 
@@ -276,7 +261,7 @@ window.addEventListener("click", function (event) {
  */
 document.addEventListener("DOMContentLoaded", () => {
 	if (tasks.length === 0) {
-		saveTasksToLocalStorage(initialTasks); // Optional fallback
+		saveTasksToLocalStorage(tasks); // Optional fallback
 	}
 	renderTasks(getTasksFromLocalStorage());
 });
@@ -285,13 +270,15 @@ const toggle = document.getElementById("themeToggle");
 const body = document.body;
 const sidebar = document.getElementById("side-bar-div");
 const hideSidebarBtn = document.getElementById("hideSidebar");
-const layout = document.getElementById('layout')
+const darkLight = document.getElementById("logoDark");
+const lightLogo = document.getElementById("logo");
 
 toggle.addEventListener("change", () => {
-  body.classList.toggle("dark-mode");
+	body.classList.toggle("dark-mode");
+	darkLight.style.display = "block";
+	lightLogo.style.display = "none";
 });
 
 hideSidebarBtn.addEventListener("click", () => {
-  sidebar.classList.toggle("hidden");
-  layout.style.width='2000px'
+	sidebar.classList.toggle("hidden");
 });
