@@ -370,4 +370,33 @@ h2 {
 		padding-left: 12px;
 		font-weight: 700;
 	}
+    .header-board-name{
+        display: none;
+    }
+    #side-bar-div {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 200px;
+        margin-top: 65px;
+        width: 85%;
+        background: var(--background-color, #fff);
+        z-index: 1000;
+        margin-left: 30px;
+        
+      }
+    
+      /* Show sidebar when toggled */
+    #side-bar-div.show-sidebar {
+        transform: translateX(0);
+    }
+
+    .hide-button{
+        display: none;
+    }
+        
+    
+  
 }
