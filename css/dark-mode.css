@@ -110,17 +110,17 @@
   }
 
   .hide-button {
-    background: rgba(99, 95, 199, 1);
+    background: rgba(244, 247, 253, 1);
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 0 100px 100px 0;
     cursor: pointer;
     height: 50px;
     width: 276px;
-    color:whitesmoke;
+    color:rgba(99, 95, 199, 1);
   }
   .hide-switch{
-    background-color:rgba(99, 95, 199, 1) ;
+    background-color:rgba(244, 247, 253, 1) ;
     height: 48px;
     width: 250px;
     border-radius: 6px;
