@@ -9,7 +9,7 @@
 		/>
 		<link rel="stylesheet" href="./css/modal.css" />
 		<link rel="stylesheet" href="./css/style.css" />
-		<link rel="stylesheet" href="./css/dark-mode.css">
+		<link rel="stylesheet" href="./css/dark-mode.css" />
 		<link
 			rel="icon"
 			type="image/png"
@@ -22,8 +22,19 @@
 	<body>
 		<!-- Navigation Sidebar: Contains the logo, navigation links for boards, and theme toggle. -->
 		<nav class="side-bar" id="side-bar-div">
-			<div id="side-logo-div">
-				<img id="logo" src="./assets/logo-light.svg" alt="logo-light" />
+			<div id="side-logo-div" class="logo">
+				<img
+					id="logo"
+					class="logo"
+					src="./assets/logo-light.svg"
+					alt="logo-light"
+				/>
+				<img
+					id="logoDark"
+					class="logo-dark"
+					src="./assets/logo-dark.svg"
+					alt="logo-dark"
+				/>
 			</div>
 
 			<div class="boards-nav-links-div" id="boards-nav-links-div">
@@ -64,10 +75,18 @@
 							<!-- tasks will be dynamically added -->
 						</div>
 					</div>
-					<div id="loading-message" style="display:none; text-align:center; padding:10px; font-weight:bold;">
+					<div
+						id="loading-message"
+						style="
+							display: none;
+							text-align: center;
+							padding: 10px;
+							font-weight: bold;
+						"
+					>
 						Loading tasks...
-					  </div>
-					  
+					</div>
+
 					<!-- DOING Column -->
 					<div class="column-div" data-status="doing">
 						<div id="doing-head-div" class="column-head-div">
@@ -91,6 +110,20 @@
 						</div>
 					</div>
 				</main>
+			</div>
+		</div>
+		<div class="controls">
+			<div class="hide-switch">
+				<span>☀️</span>
+				<label class="toggle">
+					<input type="checkbox" id="themeToggle" />
+					<span class="slider"></span>
+				</label>
+				<span>🌑</span>
+			</div>
+
+			<div>
+				<button class="hide-button" id="hideSidebar">🚫 Hide Sidebar</button>
 			</div>
 		</div>
 
@@ -126,6 +159,9 @@
 					<option value="todo">Todo</option></select
 				><br /><br />
 				<button id="saveTaskBtn" class="save-btn"></button>
+				<button id="deleteTaskBtn" class="delete-btn" style="display: none">
+					Delete Button
+				</button>
 			</div>
 		</div>
 		<script type="module" src="./scripts/script.js"></script>
