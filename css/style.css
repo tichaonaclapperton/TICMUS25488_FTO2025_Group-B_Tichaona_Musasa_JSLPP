@@ -246,6 +246,38 @@ header {
 	font-weight: bold;
 }
 
+/* .hide-button{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 16px;
+}
+
+.controls {
+    margin-bottom: 50px;
+}
+.hide-button {
+    background: rgba(244, 247, 253, 1);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0 100px 100px 0;
+    cursor: pointer;
+    height: 50px;
+    width: 276px;
+    color:rgba(99, 95, 199, 1);
+  }
+  .hide-switch{
+    position: relative;
+    bottom: 0;
+    background-color:rgba(244, 247, 253, 1) ;
+    height: 48px;
+    width: 250px;
+    border-radius: 6px;
+    padding-left: 80px;
+    padding-top: 8px;
+    margin-left: 20px;
+    margin-bottom: 14px;
+  } */
+
 /* ===============
          Headings
       ================ */
