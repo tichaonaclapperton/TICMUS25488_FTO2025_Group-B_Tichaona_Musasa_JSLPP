@@ -291,3 +291,18 @@ toggle.addEventListener("change", () => {
 hideSidebarBtn.addEventListener("click", () => {
 	sidebar.classList.toggle("hidden");
 });
+
+    // mobile view side-bar toogle
+
+ // script.js
+document.addEventListener("DOMContentLoaded", () => {
+    const mobileLogo = document.querySelector(".logo-mobile");
+    const sideBar = document.getElementById("side-bar-div");
+  
+    mobileLogo.addEventListener("click", () => {
+      // Toggle a class to hide/show the sidebar
+      sideBar.classList.toggle("show-sidebar");
+      
+    });
+  });
+     
