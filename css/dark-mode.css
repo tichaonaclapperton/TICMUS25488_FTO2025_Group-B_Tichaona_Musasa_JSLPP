@@ -1,0 +1,131 @@
+:root {
+    --bg-color: #f4f7fd;
+    --text-color: #000000;
+    --dark-mode: rgba(43, 44, 55, 1);
+    
+  }
+
+  body.dark-mode {
+    --bg-color: rgba(32, 33, 44, 1);
+    --text-color: #f0f0f0;
+  }
+
+  .dark-mode .side-bar{
+    background-color: var(--dark-mode);
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+  }
+  .dark-mode .sticky-header{
+    background-color: var(--dark-mode);
+  }
+  .side-bar.dark-mode{
+    background-color:var();
+  }
+  .dark-mode .task-div {
+    background-color: var(--dark-mode);
+    color: whitesmoke;
+  }
+  .dark-mode .logo{
+    background: var(--dark-mode);
+  }
+
+  .dark-mode h2 {
+    color: whitesmoke;
+  }
+  .dark-mode .bbb{
+    background: none;
+  }
+
+
+  .side-bar.hidden {
+    transform: translateX(-100%);
+    
+  }
+
+  .content {
+    flex: 1;
+    
+  }
+
+  .controls {
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .toggle {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+  }
+
+  .toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+  }
+
+  input:checked + .slider {
+    background-color: #673ab7;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(20px);
+  }
+
+  .hide-button {
+    background: rgba(99, 95, 199, 1);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0 100px 100px 0;
+    cursor: pointer;
+    height: 50px;
+    width: 276px;
+    color:whitesmoke;
+  }
+  .hide-switch{
+    background-color:rgba(99, 95, 199, 1) ;
+    height: 48px;
+    width: 250px;
+    border-radius: 6px;
+    padding-left: 80px;
+    padding-top: 8px;
+    margin-left: 20px;
+    margin-bottom: 14px;
+  }
