@@ -17,7 +17,7 @@ body {
 .modal-content {
 	background: white;
 	padding: 20px;
-	min-width: 600px;
+	width: 480px;
 	border-radius: 10px;
 	position: relative;
 	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
@@ -68,6 +68,18 @@ label {
 	font-size: 12px;
 	line-height: 100%;
 }
+.delete-btn{
+    background-color: rgba(234, 85, 85, 1);
+    height: 40px;
+    width: 200px;
+    border-radius: 20px;
+    /* margin-left: 240px; */
+    padding-left: 60px;
+    padding-top: 13px;
+    border: none;
+    color: whitesmoke;
+
+}
 
 .save-btn {
 	background-color: rgba(99, 95, 199, 1);
@@ -76,6 +88,7 @@ label {
 	border: 0;
 	color: white;
 	cursor: pointer;
+    margin-right: 30px;
 }
 .save-btn:hover {
 	background-color: rgb(8, 0, 255);
