@@ -223,6 +223,7 @@ function saveTasksToLocalStorage(tasks) {
 
 export function saveTasks() {
 	saveTasksToLocalStorage(tasks);
+    renderTasks(tasks)
 }
 
 deleteTaskBtn.addEventListener("click", () => {
@@ -234,6 +235,7 @@ deleteTaskBtn.addEventListener("click", () => {
 function deletTaskFromLocalStorage(id) {
 	tasks = tasks.filter((task) => task.id !== id);
 	saveTasks();
+    renderTasks(tasks)
 }
 
 /**
@@ -274,10 +276,17 @@ const darkLight = document.getElementById("logoDark");
 const lightLogo = document.getElementById("logo");
 
 toggle.addEventListener("change", () => {
-	body.classList.toggle("dark-mode");
-	darkLight.style.display = "block";
-	lightLogo.style.display = "none";
-});
+    body.classList.toggle("dark-mode");
+    if (body.classList.contains("dark-mode")) {
+      darkLight.style.display = "block";
+      lightLogo.style.display = "none";
+    } else {
+      darkLight.style.display = "none";
+      lightLogo.style.display = "block";
+    }
+    renderTasks(tasks);
+  });
+  
 
 hideSidebarBtn.addEventListener("click", () => {
 	sidebar.classList.toggle("hidden");
