@@ -45,7 +45,7 @@ addTaskBtn.addEventListener("click", () => {
  * @returns {Array<Object>} - The list of stored tasks or an empty array.
  */
 
-function getTasksFromLocalStorage() {
+export function getTasksFromLocalStorage() {
 	try {
 		const storedTasks = localStorage.getItem("tasks");
 		return storedTasks ? JSON.parse(storedTasks) : [];
