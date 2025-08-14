@@ -223,7 +223,7 @@ function saveTasksToLocalStorage(tasks) {
 
 export function saveTasks() {
 	saveTasksToLocalStorage(tasks);
-    renderTasks(tasks)
+	renderTasks(tasks);
 }
 
 deleteTaskBtn.addEventListener("click", () => {
@@ -235,7 +235,7 @@ deleteTaskBtn.addEventListener("click", () => {
 function deletTaskFromLocalStorage(id) {
 	tasks = tasks.filter((task) => task.id !== id);
 	saveTasks();
-    renderTasks(tasks)
+	renderTasks(tasks);
 }
 
 /**
@@ -276,33 +276,34 @@ const darkLight = document.getElementById("logoDark");
 const lightLogo = document.getElementById("logo");
 
 toggle.addEventListener("change", () => {
-    body.classList.toggle("dark-mode");
-    if (body.classList.contains("dark-mode")) {
-      darkLight.style.display = "block";
-      lightLogo.style.display = "none";
-    } else {
-      darkLight.style.display = "none";
-      lightLogo.style.display = "block";
-    }
-    renderTasks(tasks);
-  });
-  
+	body.classList.toggle("dark-mode");
+	if (body.classList.contains("dark-mode")) {
+		darkLight.style.display = "block";
+		lightLogo.style.display = "none";
+	} else {
+		darkLight.style.display = "none";
+		lightLogo.style.display = "block";
+	}
+	renderTasks(tasks);
+});
 
 hideSidebarBtn.addEventListener("click", () => {
 	sidebar.classList.toggle("hidden");
 });
 
-    // mobile view side-bar toogle
+// mobile view side-bar toogle
 
- // script.js
+
 document.addEventListener("DOMContentLoaded", () => {
-    const mobileLogo = document.querySelector(".logo-mobile");
-    const sideBar = document.getElementById("side-bar-div");
-  
-    mobileLogo.addEventListener("click", () => {
-      // Toggle a class to hide/show the sidebar
-      sideBar.classList.toggle("show-sidebar");
-      
-    });
-  });
-     
+	const mobileLogo = document.querySelector(".logo-mobile");
+	const sideBar = document.getElementById("side-bar-div");
+	const overlay = document.getElementById("overlay");
+
+	mobileLogo.addEventListener("click", () => {
+		// Toggle a class to hide/show the sidebar
+		sideBar.classList.toggle("show-sidebar");
+		overlay.classList.toggle("show-overlay");
+	});
+
+	
+});
