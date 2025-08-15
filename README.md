@@ -17,9 +17,19 @@ Organize tasks into **To Do**, **Doing**, and **Done** columns, with support for
 
 ---
 
+[presantation](https://www.loom.com/share/f58a0e963b4d4dc4a6c6bd8e7a42d4ff?sid=162e1b02-22a9-4075-a527-6118a5f7434b);
+
+
+
+
 ## 🚀 Getting Started
 
 ### 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/tichaonaclapperton/TICMUS25488_FTO2025_Group-B_Tichaona_Musasa_JSLPP.git
 cd kanban-board
+
+
+---
+[presantation](https://www.loom.com/share/f58a0e963b4d4dc4a6c6bd8e7a42d4ff?sid=162e1b02-22a9-4075-a527-6118a5f7434b);
+
