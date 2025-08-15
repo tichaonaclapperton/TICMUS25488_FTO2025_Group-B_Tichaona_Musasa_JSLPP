@@ -6,6 +6,7 @@ const hideSidebarBtn = document.getElementById("hideSidebar");
 const darkLight = document.getElementById("logoDark");
 const lightLogo = document.getElementById("logo");
 const hideSwitch = document.getElementById("hideSwitch");
+const showSideBar = document.getElementById('openningSideBar');
 
 toggle.addEventListener("change", () => {
 	body.classList.toggle("dark-mode");
@@ -27,5 +28,12 @@ toggle.addEventListener("change", () => {
 
 hideSidebarBtn.addEventListener("click", () => {
 	sidebar.classList.toggle("hidden");
+	sidebar.classList.add("hidden");
+	showSideBar.style.display = 'flex'
 });
+showSideBar.addEventListener('click',()=>{
+	sidebar.classList.toggle("hidden");
+	sidebar.classList.remove("hidden");
+	showSideBar.style.display = 'none'
+})
 }

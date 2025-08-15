@@ -1,4 +1,5 @@
-import { tasks, saveTasks, getTasksFromLocalStorage } from "./main.js";
+import { tasks, saveTasks } from "./main.js";
+import { getTasksFromLocalStorage } from "./storage/storage.js";
 
 export async function fetchTasksFromAPI() {
 	const apiURL = "https://jsl-kanban-api.vercel.app/";
@@ -58,6 +59,4 @@ export async function loadApiTasks() {
 			console.error("Error hiding loading message:", error);
 		}
 	}
-
-   
 }

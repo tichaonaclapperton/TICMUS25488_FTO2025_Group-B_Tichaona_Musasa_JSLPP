@@ -1,3 +1,4 @@
+import {selectedTask} from '../main.js';
 export function closeModal(){
     const closeModalBtn = document.getElementById("close-modal");
 

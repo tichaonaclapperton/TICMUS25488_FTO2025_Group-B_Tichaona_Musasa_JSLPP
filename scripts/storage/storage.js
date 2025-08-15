@@ -13,3 +13,11 @@ export function getTasksFromLocalStorage() {
 export function saveTasksToLocalStorage(tasks) {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
+export function appendTaskToContainer(task, taskDiv) {
+	const container = document.querySelector(
+		`.tasks-container[data-status="${task.status}"]`
+	);
+	if (container) {
+		container.appendChild(taskDiv);
+	}
+}
