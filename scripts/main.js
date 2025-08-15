@@ -79,7 +79,7 @@ export function openModal(taskElement) {
 	modal.style.display = "flex";
 }
 
-const renderTasks = (tasks) => {
+export const renderTasks = (tasks) => {
 	// 1 Clear all existing tasks
 	document.querySelectorAll(".tasks-container").forEach((container) => {
 		container.innerHTML = "";
@@ -172,7 +172,9 @@ saveTaskBtn.addEventListener("click", () => {
 
 		tasks.push({ id: Date.now(), title, description, status });
 	}
+	renderTasks();
 	saveTasks();
+	
 
 	modal.style.display = "none";
 });
