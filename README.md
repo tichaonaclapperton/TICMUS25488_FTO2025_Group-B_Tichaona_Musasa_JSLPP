@@ -21,7 +21,10 @@ Organize tasks into **To Do**, **Doing**, and **Done** columns, with support for
 [My presantation](https://www.loom.com/share/6690c1f66ed548f097f34d2f72a184a3?sid=b1b8f170-f115-4954-9f97-5782cd655ce6)
 
 ---
+## Netlify Deployment
 
+
+[Netlify](https://kanban-taskmanagement-2ed783.netlify.app)
 
 ### 1️⃣ Clone the Repository
 ```bash
