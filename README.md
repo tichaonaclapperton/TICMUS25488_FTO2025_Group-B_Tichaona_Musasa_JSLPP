@@ -16,9 +16,15 @@ Organize tasks into **To Do**, **Doing**, and **Done** columns, with support for
 - **Responsive Design** — Works on desktop and mobile.
 
 ---
+## My Presantation
+
+[My presantation](https://www.loom.com/share/6690c1f66ed548f097f34d2f72a184a3?sid=b1b8f170-f115-4954-9f97-5782cd655ce6)
+
+---
 
 
 ### 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/tichaonaclapperton/TICMUS25488_FTO2025_Group-B_Tichaona_Musasa_JSLPP.git
 cd kanban-board
+---
